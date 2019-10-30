@@ -1,6 +1,6 @@
 import Foundation
 
-struct ErrorResponse: Codable {
-    var error: Bool
-    var reason: String
+public struct ErrorResponse: Codable {
+    public var error: Bool
+    public var reason: String
 }

@@ -3,11 +3,11 @@ import Foundation
 /// Basic service with get, post and delete
 open class Service {
 
-    let decoder: JSONDecoder = JSONDecoder()
-    let encoder: JSONEncoder = JSONEncoder()
+    open var decoder: JSONDecoder = JSONDecoder()
+    open var encoder: JSONEncoder = JSONEncoder()
 
-    var root: URL?
-    var token: String?
+    open var root: URL?
+    open var token: String?
 
     public func get(urlString: String, completionBlock: @escaping (Data) -> Void) {
         // Set up the URL request
@@ -135,7 +135,7 @@ open class Service {
         task.resume()
     }
 
-    func errorFromData(_ data: Data) -> ErrorResponse? {
+    public func errorFromData(_ data: Data) -> ErrorResponse? {
         return try? decoder.decode(ErrorResponse.self, from: data)
     }
 
