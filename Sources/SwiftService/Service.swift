@@ -3,12 +3,14 @@ import Foundation
 /// Basic service with get, post and delete
 open class Service {
 
-    open var decoder: JSONDecoder = JSONDecoder()
-    open var encoder: JSONEncoder = JSONEncoder()
+    public var decoder: JSONDecoder = JSONDecoder()
+    public var encoder: JSONEncoder = JSONEncoder()
 
-    open var root: URL?
-    open var token: String?
-
+    public var root: URL?
+    public var token: String?
+    
+    public init() {}
+    
     public func get(urlString: String, completionBlock: @escaping (Data) -> Void) {
         // Set up the URL request
         guard let url = urlWithRootTo(urlString) else {
