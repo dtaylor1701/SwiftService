@@ -5,6 +5,7 @@ open class Service {
     
     public var decoder: JSONDecoder = JSONDecoder()
     public var encoder: JSONEncoder = JSONEncoder()
+    public var scheme: String = "https"
     public var host: String?
     public var authorization: String?
     public var contentType: String? = "application/json"
@@ -78,6 +79,7 @@ open class Service {
         var components = URLComponents()
         components.host = self.host
         components.path = path
+        components.scheme = scheme
         return components
     }
 }
