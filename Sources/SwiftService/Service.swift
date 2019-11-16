@@ -21,6 +21,7 @@ open class Service {
         }
         
         var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
         for header in headers {
             request.add(header: header)
         }
