@@ -25,8 +25,8 @@ open class Service {
         for header in headers {
             request.add(header: header)
         }
-        
-        let task = session.dataTask(with: url) { (data, response, error) in
+
+        let task = session.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse else {
                 onComplete(.failure(.init(message: "Did not get an http response")))
                 return
